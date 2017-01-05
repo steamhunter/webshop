@@ -6,35 +6,54 @@
 }
 #header
 {
-	background-color:red;
+	background-color:9bb0b6;
+	height:45px;
+	padding-right:20px;
 }
 #basket
 {
-	background-color:green;
-	width:20px;
+	background-color:white;
+	width:30px;
+	height:30px;
+	float:right;
 }
 .shopitem
 {
 	width:100px;
 	height:100px;
-	background-color:yellow;
-	border:1px red solid;
+	background-color:white;
+	border:1px #9bb0b6 solid;
 	float:left;
+	margin:3px 3px 3px 3px;
 }
 #sidebar_left
 {
-	width:100px;
+	margin-top:30px;
+	margin-left:10px;
+	background-color:white;
+	width:150px;
 	float:left;
 	height:100%;
+	border:1px #9bb0b6 solid;
+	border-radius:10px;
+	text-align:center;
 }
 #sidebar_right
 {
-	width:100px;
-	float:left;
+	margin-top:30px;
+	margin-right:10px;
+	background-color:white;
+	width:150px;
+	float:right;
 	height:100%;
+	border:1px #9bb0b6 solid;
+	border-radius:10px;
+	text-align:center;
 }
 #content
 {
-	width:1000px;
+	margin:auto;
+	margin-top:30px;
+	width:1100px;
 	background-color:green;
 }

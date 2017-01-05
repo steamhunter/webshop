@@ -1,6 +1,9 @@
 
 <div id="sidebar_left">
-sidebar
+Kategóriák
+</div>
+<div id="sidebar_right">
+Quickview
 </div>
 <div id="content">
 <?php
@@ -10,12 +13,13 @@ for($s=0;$s<10;$s++)
 	{
 		?>
 		<div class="shopitem">
+			<div id="itemimage">
+			</div>
+			<div id="itemname">
+			</div>
 		</div>
 		<?php
 	}
 }
 ?>
-</div>
-<div id="sidebar_right">
-sidebar
 </div>
