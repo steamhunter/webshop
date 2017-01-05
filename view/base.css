@@ -1,0 +1,40 @@
+*
+{
+	margin:0;
+	padding:0;
+	border:0;
+}
+#header
+{
+	background-color:red;
+}
+#basket
+{
+	background-color:green;
+	width:20px;
+}
+.shopitem
+{
+	width:100px;
+	height:100px;
+	background-color:yellow;
+	border:1px red solid;
+	float:left;
+}
+#sidebar_left
+{
+	width:100px;
+	float:left;
+	height:100%;
+}
+#sidebar_right
+{
+	width:100px;
+	float:left;
+	height:100%;
+}
+#content
+{
+	width:1000px;
+	background-color:green;
+}
