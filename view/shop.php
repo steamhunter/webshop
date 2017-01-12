@@ -1,4 +1,3 @@
-
 <div id="sidebar_left">
 Kategóriák
 </div>
@@ -7,19 +6,21 @@ Quickview
 </div>
 <div id="content">
 <?php
-for($s=0;$s<10;$s++)
+$db=DB::getInstance();
+$db->connect();
+$items=$db->query("select * from products");
+for($i=0;$i<count($items);$i++)
 {
-	for($o=0;$o<10;$o++)
-	{
+	
 		?>
 		<div class="shopitem">
 			<div id="itemimage">
 			</div>
 			<div id="itemname">
+			<?=$items[$i]['name']?>
 			</div>
 		</div>
 		<?php
-	}
 }
 ?>
 </div>
