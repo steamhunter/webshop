@@ -1,14 +1,42 @@
+<?php
+if(!isset($_SESSION['cart']))
+{
+	$_SESSION['cart']=array();
+}
+
+if(isset($post)&&isset($_SESSION['username']))
+{
+	$_SESSION['cart'][]=$post['itemid'];
+}
+$db=DB::getInstance();
+$db->connect();
+$items=$db->query("select * from products");
+?>
 <div id="sidebar_left">
 Kategóriák
 </div>
 <div id="sidebar_right">
 Quickview
+<?php
+if(isset($_SESSION['username']))
+{
+	for($i=0;$i<count($items);$i++)
+	{
+		for($j=0;$j<count($_SESSION['cart']);$j++)
+		{
+		
+			if($items[$i]['id']==$_SESSION['cart'][$j])
+			{
+				print"<br>";
+				print($items[$i]['name']);
+			}
+		}
+	}
+}
+?>
 </div>
 <div id="content">
 <?php
-$db=DB::getInstance();
-$db->connect();
-$items=$db->query("select * from products");
 for($i=0;$i<count($items);$i++)
 {
 	
@@ -18,6 +46,12 @@ for($i=0;$i<count($items);$i++)
 			</div>
 			<div id="itemname">
 			<?=$items[$i]['name']?>
+			</div>
+			<div id="itemAddToCart">
+			<form method="post" action="">
+			<input type="submit" name="addtocart" value="kosárba">
+			<input type="hidden" name="itemid" value="<?=$items[$i]['id']?>">
+			</form>
 			</div>
 		</div>
 		<?php
