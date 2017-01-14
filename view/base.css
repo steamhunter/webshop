@@ -10,6 +10,21 @@
 	height:45px;
 	padding-right:20px;
 }
+#search
+{
+	width:170px;
+	float:left;
+}
+#logo
+{
+	width:300px;
+	float:left;
+}
+#loginregister
+{
+	width:435px;
+	float:left;
+}
 #basket
 {
 	background-color:white;
@@ -19,12 +34,20 @@
 }
 .shopitem
 {
-	width:100px;
-	height:100px;
+	width:150px;
+	height:200px;
 	background-color:white;
 	border:1px #9bb0b6 solid;
 	float:left;
 	margin:3px 3px 3px 3px;
+}
+#itemimage
+{
+	width:145px;
+	height:145px;
+	border:1px solid #9bb0b6;
+	margin:auto;
+	margin-top:1.5px;
 }
 #sidebar_left
 {

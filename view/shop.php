@@ -3,14 +3,6 @@ if(!isset($_SESSION['cart']))
 {
 	$_SESSION['cart']=array();
 }
-
-if(isset($post)&&isset($_SESSION['username']))
-{
-	$_SESSION['cart'][]=$post['itemid'];
-}
-$db=DB::getInstance();
-$db->connect();
-$items=$db->query("select * from products");
 ?>
 <div id="sidebar_left">
 Kategóriák
