@@ -9,8 +9,18 @@
 	<?php
 	session_start();
 	include("/modell/db.php");
+	$db=DB::getInstance();
+	$db->connect();
+	$items=$db->query("select * from products");
+	include("/modell/cart.php");
 	include("/view/header.php");
+	if(isset($_POST['endshop']))
+	{
 	include("view/paymentwindow.php");
+	}else if(isset($_POST['finishcart']))
+	{
+	include("view/customerdata.php");
+	}
 	?>
 	</body>
 </html>

@@ -12,7 +12,17 @@
 	{
 		$post=$_POST;
 	}
+	if(isset($post)&&isset($_SESSION['username']))
+	{
+	$_SESSION['cart'][]=$post['itemid'];
+	}
 	include("/modell/db.php");
+	$db=DB::getInstance();
+	$db->connect();
+	$items=$db->query("select * from products");
+	include("/modell/cart.php");
+	
+
 	include("/view/header.php");
 	include("view/shop.php");
 	?>

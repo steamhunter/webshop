@@ -1,8 +1,14 @@
 <div>
-sajnáljuk de a fizetés jelenleg nem elérhetö. kérem probálkozzon vele késöbb <br>
-figyelem a kosár tartalma ettöl függetlenül eltünik!
+<div id="cartList">
 <?php
-$_SESSION['cart']=null;
+print Cart::GetCartItems($items);
 ?>
-<a href="../index.php">viszatérés a vásárláshoz</a>
+<form method="post">
+<input type="submit" name="finishcart" value="fizetés">
+</form>
+</div>
+<?php
+//$_SESSION['cart']=null;
+//<a href="../index.php">viszatérés a vásárláshoz</a>
+?>
 </div>

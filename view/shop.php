@@ -10,21 +10,8 @@ Kategóriák
 <div id="sidebar_right">
 Quickview
 <?php
-if(isset($_SESSION['username']))
-{
-	for($i=0;$i<count($items);$i++)
-	{
-		for($j=0;$j<count($_SESSION['cart']);$j++)
-		{
-		
-			if($items[$i]['id']==$_SESSION['cart'][$j])
-			{
-				print"<br>";
-				print($items[$i]['name']);
-			}
-		}
-	}
-}
+print("<br>");
+print(Cart::GetCartForQuickWiev($items));
 ?>
 </div>
 <div id="content">
@@ -35,15 +22,18 @@ for($i=0;$i<count($items);$i++)
 		?>
 		<div class="shopitem">
 			<div id="itemimage">
+			<?php $image=$items[$i]['image']?>
+			<img src=<?=$image?>></img>
 			</div>
 			<div id="itemname">
 			<?=$items[$i]['name']?>
 			</div>
 			<div id="itemAddToCart">
-			<form method="post" action="">
+			<form method="post" action="" id="itemCartForm">
 			<input type="submit" name="addtocart" value="kosárba">
 			<input type="hidden" name="itemid" value="<?=$items[$i]['id']?>">
 			</form>
+			<div id="itemprice"><?php print($items[$i]['price']." Ft")?></div>
 			</div>
 		</div>
 		<?php
