@@ -6,12 +6,24 @@ if(!isset($_SESSION['cart']))
 ?>
 <div id="sidebar_left">
 Kategóriák
+<br><a href='index.php?filter=none'>főoldal</a>
+<?php
+$db=DB::getInstance();
+$db->connect();
+$categories=$db->query("SELECT * FROM `categories`");
+for($i=0;$i<count($categories);$i++)
+{
+	$category=$categories[$i]['name'];
+	$catid=$categories[$i]['id'];
+	print "<br><a href='index.php?filter=$catid'>$category</a>";
+}
+?>
 </div>
 <div id="sidebar_right">
 Quickview
 <?php
 print("<br>");
-print(Cart::GetCartForQuickWiev($items));
+print(Cart::GetCartForQuickWiev($itemsall));
 ?>
 </div>
 <div id="content">

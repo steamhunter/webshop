@@ -3,7 +3,7 @@
 ?>
 <div id="header">
 	<div id="Search">
-		<form method="post" action="">
+		<form method="get" action="/index.php">
 			<input type="text" name="Search" value="Search..." id="Search"> 
 		</form>
 	</div>
@@ -40,7 +40,7 @@
                     <form id="loginForm" method="post" action="../payment.php">
                         <fieldset id="body">
                            <?php
-							$cart=Cart::GetCartForHoover($items);
+							$cart=Cart::GetCartForHoover($itemsall);
 							print($cart);
 							?>
                         </fieldset>

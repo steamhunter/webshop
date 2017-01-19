@@ -19,7 +19,27 @@
 	include("/modell/db.php");
 	$db=DB::getInstance();
 	$db->connect();
+	$itemsall=$db->query("select * from products ");
+	if($_SERVER["REQUEST_METHOD"]=="GET"&&isset($_GET['filter']))
+	{
+		if($_GET['filter']=="none")
+		{
+			$_SESSION['filter']=null;
+			$items=$db->query("select * from products");
+		}else
+		{
+		$filter= $_GET['filter'];
+		$_SESSION['filter']=$filter;
+		$items=$db->query("select * from products WHERE category ='$filter'");
+		}
+	}else if(isset($_SESSION['filter']))
+	{
+	$filter=$_SESSION['filter'];
+	$items=$db->query("select * from products WHERE category ='$filter'");
+	}else
+	{
 	$items=$db->query("select * from products");
+	}
 	include("/modell/cart.php");
 	
 
